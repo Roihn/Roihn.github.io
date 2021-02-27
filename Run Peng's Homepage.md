@@ -30,11 +30,19 @@ Electrical and Computer Engineering B.S, UM-SJTU Joint Institute Shanghai, China
 
 #### **SJTU-[ThinkLab](http://thinklab.sjtu.edu.cn/)**
 
-Member *Nov 2020 - Present*
+Member *Nov 2020 - Feb 2020*
 
-- Researching topics related to the **Multi-agent Reinforcement Learning**
+- Researching topics related to **Multi-agent Reinforcement Learning** (Mainly used: `raylib`, `pytorch`).
 
-- Applied Recursive Neural Network (LSTM) on training a virtual plane to get higher score in a war game; designed 71 actions and states with 740 dimensions.
+- Applied for a patent about applying CNN-based MARL algorithms on optimizing cooperation between drones for scouting unexplored areas.
+
+#### **Service Migration Strategy on Edge Cloud Computing**
+
+Member *with Xudong Wang, professor, UM-SJTU Joint institute, Jan 2020 - Present*
+- Applying machine learning algorithm to determine the edge server for the backend to
+migrate based on the current B5G network status and computational resources, so as to
+guarantee QoS of applications
+
 
 #### **Experimental Evaluation of Deep Reinforcement Learning Algorithms** 
 
@@ -64,11 +72,13 @@ Adaptive Autonomous Agent Lab Researcher  *Aug 2019 - Sep 2020*
 
 Algorithm Engineer AIM Shanghai  *Aug 2020 - Jan 2021*
 
+*"Run Peng is the most skilled intern student on self-learning and code designing I have ever seen! He can always clearly understand my meaning by only a few words whcih impressed me a lot."  By Celebi L., Mentor.*
+
 - Applied **Kubernetes & K3S** to Cloud deployment construction; Designed automatic, minimized installation method for small companies without scaled web clusters or related engineers.
 
 - Constuct **Lua SDK** of **mockserver** for web testing to raise efficiency of coordination between front and back-end teams
 
-- Construct **Lua SDK** of **SQL (mysql, postgres)** code format correction for preventing SQL **injection** and increasing the code simplicity.
+- Construct **Lua SDK** of **SQL (mysql, postgres)** code format correction for preventing SQL injection and increasing the code simplicity.
 
 
 
@@ -92,5 +102,5 @@ Vice president  *Sep 2018 - Oct 2020*
 
 **Languages:** English (Fluent, TOEFL:105, IELTS:7.5), Japanese (Native, JLPT-N1)
 
-**Computer:** C/C++, Python, Lua, Javascript, Shell, MATLAB, Pascal, Mathematica, Docker
+**Computer:** C/C++, Python, Lua, Javascript, Shell, SQL, MATLAB, Pascal, Mathematica, Docker
 

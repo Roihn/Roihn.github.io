@@ -1,1428 +1,547 @@
+
 <!doctype html>
 <html>
-
 <head>
-	<meta charset='UTF-8'>
-	<meta name='viewport' content='width=device-width initial-scale=1'>
-	<title>Run Peng&#39;s Homepage</title>
-	<link
-		href='https://fonts.loli.net/css?family=Didact+Gothic&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext'
-		rel='stylesheet' type='text/css' />
-	<style type='text/css'>
-		html {
-			overflow-x: initial !important;
-		}
-
-		:root {
-			--bg-color: #ffffff;
-			--text-color: #333333;
-			--select-text-bg-color: #B5D6FC;
-			--select-text-font-color: auto;
-			--monospace: "Lucida Console", Consolas, "Courier", monospace;
-		}
-
-		html {
-			font-size: 14px;
-			background-color: var(--bg-color);
-			color: var(--text-color);
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			-webkit-font-smoothing: antialiased;
-		}
-
-		body {
-			margin: 0px;
-			padding: 0px;
-			height: auto;
-			bottom: 0px;
-			top: 0px;
-			left: 0px;
-			right: 0px;
-			font-size: 1rem;
-			line-height: 1.42857143;
-			overflow-x: hidden;
-			background-image: inherit;
-			background-size: inherit;
-			background-attachment: inherit;
-			background-origin: inherit;
-			background-clip: inherit;
-			background-color: inherit;
-			tab-size: 4;
-			background-position: inherit inherit;
-			background-repeat: inherit inherit;
-		}
-
-		iframe {
-			margin: auto;
-		}
-
-		a.url {
-			word-break: break-all;
-		}
-
-		a:active,
-		a:hover {
-			outline: 0px;
-		}
-
-		.in-text-selection,
-		::selection {
-			text-shadow: none;
-			background: var(--select-text-bg-color);
-			color: var(--select-text-font-color);
-		}
-
-		#write {
-			margin: 0px auto;
-			height: auto;
-			width: inherit;
-			word-break: normal;
-			word-wrap: break-word;
-			position: relative;
-			white-space: normal;
-			overflow-x: visible;
-			padding-top: 40px;
-		}
-
-		#write.first-line-indent p {
-			text-indent: 2em;
-		}
-
-		#write.first-line-indent li p,
-		#write.first-line-indent p * {
-			text-indent: 0px;
-		}
-
-		#write.first-line-indent li {
-			margin-left: 2em;
-		}
-
-		.for-image #write {
-			padding-left: 8px;
-			padding-right: 8px;
-		}
-
-		body.typora-export {
-			padding-left: 30px;
-			padding-right: 30px;
-		}
-
-		.typora-export .footnote-line,
-		.typora-export li,
-		.typora-export p {
-			white-space: pre-wrap;
-		}
-
-		.typora-export .task-list-item input {
-			pointer-events: none;
-		}
-
-		@media screen and (max-width: 500px) {
-			body.typora-export {
-				padding-left: 0px;
-				padding-right: 0px;
-			}
-
-			#write {
-				padding-left: 20px;
-				padding-right: 20px;
-			}
-
-			.CodeMirror-sizer {
-				margin-left: 0px !important;
-			}
-
-			.CodeMirror-gutters {
-				display: none !important;
-			}
-		}
-
-		#write li>figure:last-child {
-			margin-bottom: 0.5rem;
-		}
-
-		#write ol,
-		#write ul {
-			position: relative;
-		}
-
-		img {
-			max-width: 100%;
-			vertical-align: middle;
-		}
-
-		button,
-		input,
-		select,
-		textarea {
-			color: inherit;
-			font-family: inherit;
-			font-size: inherit;
-			font-style: inherit;
-			font-variant-caps: inherit;
-			font-weight: inherit;
-			font-stretch: inherit;
-			line-height: inherit;
-		}
-
-		input[type="checkbox"],
-		input[type="radio"] {
-			line-height: normal;
-			padding: 0px;
-		}
-
-		*,
-		::after,
-		::before {
-			box-sizing: border-box;
-		}
-
-		#write h1,
-		#write h2,
-		#write h3,
-		#write h4,
-		#write h5,
-		#write h6,
-		#write p,
-		#write pre {
-			width: inherit;
-		}
-
-		#write h1,
-		#write h2,
-		#write h3,
-		#write h4,
-		#write h5,
-		#write h6,
-		#write p {
-			position: relative;
-		}
-
-		p {
-			line-height: inherit;
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			break-after: avoid-page;
-			break-inside: avoid;
-			orphans: 4;
-		}
-
-		p {
-			orphans: 4;
-		}
-
-		h1 {
-			font-size: 2rem;
-		}
-
-		h2 {
-			font-size: 1.8rem;
-		}
-
-		h3 {
-			font-size: 1.6rem;
-		}
-
-		h4 {
-			font-size: 1.4rem;
-		}
-
-		h5 {
-			font-size: 1.2rem;
-		}
-
-		h6 {
-			font-size: 1rem;
-		}
-
-		.md-math-block,
-		.md-rawblock,
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		p {
-			margin-top: 1rem;
-			margin-bottom: 1rem;
-		}
-
-		.hidden {
-			display: none;
-		}
-
-		.md-blockmeta {
-			color: rgb(204, 204, 204);
-			font-weight: 700;
-			font-style: italic;
-		}
-
-		a {
-			cursor: pointer;
-		}
-
-		sup.md-footnote {
-			padding: 2px 4px;
-			background-color: rgba(238, 238, 238, 0.701961);
-			color: rgb(85, 85, 85);
-			border-top-left-radius: 4px;
-			border-top-right-radius: 4px;
-			border-bottom-right-radius: 4px;
-			border-bottom-left-radius: 4px;
-			cursor: pointer;
-		}
-
-		sup.md-footnote a,
-		sup.md-footnote a:hover {
-			color: inherit;
-			text-transform: inherit;
-			text-decoration: inherit;
-		}
-
-		#write input[type="checkbox"] {
-			cursor: pointer;
-			width: inherit;
-			height: inherit;
-		}
-
-		figure {
-			overflow-x: auto;
-			margin: 1.2em 0px;
-			max-width: calc(100% + 16px);
-			padding: 0px;
-		}
-
-		figure>table {
-			margin: 0px;
-		}
-
-		tr {
-			break-inside: avoid;
-			break-after: auto;
-		}
-
-		thead {
-			display: table-header-group;
-		}
-
-		table {
-			border-collapse: collapse;
-			border-spacing: 0px;
-			width: 100%;
-			overflow: auto;
-			break-inside: auto;
-			text-align: left;
-		}
-
-		table.md-table td {
-			min-width: 32px;
-		}
-
-		.CodeMirror-gutters {
-			border-right-width: 0px;
-			background-color: inherit;
-		}
-
-		.CodeMirror-linenumber {}
-
-		.CodeMirror {
-			text-align: left;
-		}
-
-		.CodeMirror-placeholder {
-			opacity: 0.3;
-		}
-
-		.CodeMirror pre {
-			padding: 0px 4px;
-		}
-
-		.CodeMirror-lines {
-			padding: 0px;
-		}
-
-		div.hr:focus {
-			cursor: none;
-		}
-
-		#write pre {
-			white-space: pre-wrap;
-		}
-
-		#write.fences-no-line-wrapping pre {
-			white-space: pre;
-		}
-
-		#write pre.ty-contain-cm {
-			white-space: normal;
-		}
-
-		.CodeMirror-gutters {
-			margin-right: 4px;
-		}
-
-		.md-fences {
-			font-size: 0.9rem;
-			display: block;
-			break-inside: avoid;
-			text-align: left;
-			overflow: visible;
-			white-space: pre;
-			background-image: inherit;
-			background-size: inherit;
-			background-attachment: inherit;
-			background-origin: inherit;
-			background-clip: inherit;
-			background-color: inherit;
-			position: relative !important;
-			background-position: inherit inherit;
-			background-repeat: inherit inherit;
-		}
-
-		.md-diagram-panel {
-			width: 100%;
-			margin-top: 10px;
-			text-align: center;
-			padding-top: 0px;
-			padding-bottom: 8px;
-			overflow-x: auto;
-		}
-
-		#write .md-fences.mock-cm {
-			white-space: pre-wrap;
-		}
-
-		.md-fences.md-fences-with-lineno {
-			padding-left: 0px;
-		}
-
-		#write.fences-no-line-wrapping .md-fences.mock-cm {
-			white-space: pre;
-			overflow-x: auto;
-		}
-
-		.md-fences.mock-cm.md-fences-with-lineno {
-			padding-left: 8px;
-		}
-
-		.CodeMirror-line,
-		twitterwidget {
-			break-inside: avoid;
-		}
-
-		.footnotes {
-			opacity: 0.8;
-			font-size: 0.9rem;
-			margin-top: 1em;
-			margin-bottom: 1em;
-		}
-
-		.footnotes+.footnotes {
-			margin-top: 0px;
-		}
-
-		.md-reset {
-			margin: 0px;
-			padding: 0px;
-			border: 0px;
-			outline: 0px;
-			vertical-align: top;
-			text-decoration: none;
-			text-shadow: none;
-			float: none;
-			position: static;
-			width: auto;
-			height: auto;
-			white-space: nowrap;
-			cursor: inherit;
-			line-height: normal;
-			font-weight: 400;
-			text-align: left;
-			box-sizing: content-box;
-			direction: ltr;
-			background-position: 0px 0px;
-			background-repeat: initial initial;
-		}
-
-		li div {
-			padding-top: 0px;
-		}
-
-		blockquote {
-			margin: 1rem 0px;
-		}
-
-		li .mathjax-block,
-		li p {
-			margin: 0.5rem 0px;
-		}
-
-		li {
-			margin: 0px;
-			position: relative;
-		}
-
-		blockquote> :last-child {
-			margin-bottom: 0px;
-		}
-
-		blockquote> :first-child,
-		li> :first-child {
-			margin-top: 0px;
-		}
-
-		.footnotes-area {
-			color: rgb(136, 136, 136);
-			margin-top: 0.714rem;
-			padding-bottom: 0.143rem;
-			white-space: normal;
-		}
-
-		#write .footnote-line {
-			white-space: pre-wrap;
-		}
-
-		@media print {
-
-			body,
-			html {
-				border: 1px solid transparent;
-				height: 99%;
-				break-after: avoid-page;
-				break-before: avoid-page;
-				font-variant-ligatures: no-common-ligatures;
-			}
-
-			#write {
-				margin-top: 0px;
-				padding-top: 0px;
-				border-color: transparent !important;
-			}
-
-			.typora-export * {
-				-webkit-print-color-adjust: exact;
-			}
-
-			html.blink-to-pdf {
-				font-size: 13px;
-			}
-
-			.typora-export #write {
-				break-after: avoid-page;
-			}
-
-			.typora-export #write::after {
-				height: 0px;
-			}
-
-			.is-mac table {
-				break-inside: avoid;
-			}
-		}
-
-		.footnote-line {
-			margin-top: 0.714em;
-			font-size: 0.7em;
-		}
-
-		a img,
-		img a {
-			cursor: pointer;
-		}
-
-		pre.md-meta-block {
-			font-size: 0.8rem;
-			min-height: 0.8rem;
-			white-space: pre-wrap;
-			background-color: rgb(204, 204, 204);
-			display: block;
-			overflow-x: hidden;
-			background-position: initial initial;
-			background-repeat: initial initial;
-		}
-
-		p>.md-image:only-child:not(.md-img-error) img,
-		p>img:only-child {
-			display: block;
-			margin: auto;
-		}
-
-		#write.first-line-indent p>.md-image:only-child:not(.md-img-error) img {
-			left: -2em;
-			position: relative;
-		}
-
-		p>.md-image:only-child {
-			display: inline-block;
-			width: 100%;
-		}
-
-		#write .MathJax_Display {
-			margin: 0.8em 0px 0px;
-		}
-
-		.md-math-block {
-			width: 100%;
-		}
-
-		.md-math-block:not(:empty)::after {
-			display: none;
-		}
-
-		[contenteditable="true"]:active,
-		[contenteditable="true"]:focus,
-		[contenteditable="false"]:active,
-		[contenteditable="false"]:focus {
-			outline: 0px;
-			box-shadow: none;
-		}
-
-		.md-task-list-item {
-			position: relative;
-			list-style-type: none;
-		}
-
-		.task-list-item.md-task-list-item {
-			padding-left: 0px;
-		}
-
-		.md-task-list-item>input {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			margin-left: -1.2em;
-			margin-top: calc(1em - 10px);
-			border: none;
-		}
-
-		.math {
-			font-size: 1rem;
-		}
-
-		.md-toc {
-			min-height: 3.58rem;
-			position: relative;
-			font-size: 0.9rem;
-			border-top-left-radius: 10px;
-			border-top-right-radius: 10px;
-			border-bottom-right-radius: 10px;
-			border-bottom-left-radius: 10px;
-		}
-
-		.md-toc-content {
-			position: relative;
-			margin-left: 0px;
-		}
-
-		.md-toc-content::after,
-		.md-toc::after {
-			display: none;
-		}
-
-		.md-toc-item {
-			display: block;
-			color: rgb(65, 131, 196);
-		}
-
-		.md-toc-item a {
-			text-decoration: none;
-		}
-
-		.md-toc-inner:hover {
-			text-decoration: underline;
-		}
-
-		.md-toc-inner {
-			display: inline-block;
-			cursor: pointer;
-		}
-
-		.md-toc-h1 .md-toc-inner {
-			margin-left: 0px;
-			font-weight: 700;
-		}
-
-		.md-toc-h2 .md-toc-inner {
-			margin-left: 2em;
-		}
-
-		.md-toc-h3 .md-toc-inner {
-			margin-left: 4em;
-		}
-
-		.md-toc-h4 .md-toc-inner {
-			margin-left: 6em;
-		}
-
-		.md-toc-h5 .md-toc-inner {
-			margin-left: 8em;
-		}
-
-		.md-toc-h6 .md-toc-inner {
-			margin-left: 10em;
-		}
-
-		@media screen and (max-width: 48em) {
-			.md-toc-h3 .md-toc-inner {
-				margin-left: 3.5em;
-			}
-
-			.md-toc-h4 .md-toc-inner {
-				margin-left: 5em;
-			}
-
-			.md-toc-h5 .md-toc-inner {
-				margin-left: 6.5em;
-			}
-
-			.md-toc-h6 .md-toc-inner {
-				margin-left: 8em;
-			}
-		}
-
-		a.md-toc-inner {
-			font-size: inherit;
-			font-style: inherit;
-			font-weight: inherit;
-			line-height: inherit;
-		}
-
-		.footnote-line a:not(.reversefootnote) {
-			color: inherit;
-		}
-
-		.md-attr {
-			display: none;
-		}
-
-		.md-fn-count::after {
-			content: ".";
-		}
-
-		code,
-		pre,
-		samp,
-		tt {
-			font-family: var(--monospace);
-		}
-
-		kbd {
-			margin: 0px 0.1em;
-			padding: 0.1em 0.6em;
-			font-size: 0.8em;
-			color: rgb(36, 39, 41);
-			background-color: rgb(255, 255, 255);
-			border: 1px solid rgb(173, 179, 185);
-			border-top-left-radius: 3px;
-			border-top-right-radius: 3px;
-			border-bottom-right-radius: 3px;
-			border-bottom-left-radius: 3px;
-			box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset;
-			white-space: nowrap;
-			vertical-align: middle;
-			background-position: initial initial;
-			background-repeat: initial initial;
-		}
-
-		.md-comment {
-			color: rgb(162, 127, 3);
-			opacity: 0.8;
-			font-family: var(--monospace);
-		}
-
-		code {
-			text-align: left;
-		}
-
-		a.md-print-anchor {
-			white-space: pre !important;
-			border: none !important;
-			display: inline-block !important;
-			position: absolute !important;
-			width: 1px !important;
-			right: 0px !important;
-			outline: 0px !important;
-			text-shadow: initial !important;
-			background-position: 0px 0px !important;
-			background-repeat: initial initial !important;
-		}
-
-		.md-inline-math .MathJax_SVG .noError {
-			display: none !important;
-		}
-
-		.html-for-mac .inline-math-svg .MathJax_SVG {
-			vertical-align: 0.2px;
-		}
-
-		.md-math-block .MathJax_SVG_Display {
-			text-align: center;
-			margin: 0px;
-			position: relative;
-			text-indent: 0px;
-			max-width: none;
-			max-height: none;
-			min-height: 0px;
-			min-width: 100%;
-			width: auto;
-			overflow-y: hidden;
-			display: block !important;
-		}
-
-		.MathJax_SVG_Display,
-		.md-inline-math .MathJax_SVG_Display {
-			width: auto;
-			margin: inherit;
-			display: inline-block !important;
-		}
-
-		.MathJax_SVG .MJX-monospace {
-			font-family: var(--monospace);
-		}
-
-		.MathJax_SVG .MJX-sans-serif {
-			font-family: sans-serif;
-		}
-
-		.MathJax_SVG {
-			display: inline;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-			zoom: 90%;
-			text-indent: 0px;
-			text-align: left;
-			text-transform: none;
-			letter-spacing: normal;
-			word-spacing: normal;
-			word-wrap: normal;
-			white-space: nowrap;
-			float: none;
-			direction: ltr;
-			max-width: none;
-			max-height: none;
-			min-width: 0px;
-			min-height: 0px;
-			border: 0px;
-			padding: 0px;
-			margin: 0px;
-		}
-
-		.MathJax_SVG * {
-			transition: none;
-		}
-
-		.MathJax_SVG_Display svg {
-			vertical-align: middle !important;
-			margin-bottom: 0px !important;
-			margin-top: 0px !important;
-		}
-
-		.os-windows.monocolor-emoji .md-emoji {
-			font-family: "Segoe UI Symbol", sans-serif;
-		}
-
-		.md-diagram-panel>svg {
-			max-width: 100%;
-		}
-
-		[lang="flow"] svg,
-		[lang="mermaid"] svg {
-			max-width: 100%;
-			height: auto;
-		}
-
-		[lang="mermaid"] .node text {
-			font-size: 1rem;
-		}
-
-		table tr th {
-			border-bottom-width: 0px;
-		}
-
-		video {
-			max-width: 100%;
-			display: block;
-			margin: 0px auto;
-		}
-
-		iframe {
-			max-width: 100%;
-			width: 100%;
-			border: none;
-		}
-
-		.highlight td,
-		.highlight tr {
-			border: 0px;
-		}
-
-		svg[id^="mermaidChart"] {
-			line-height: 1em;
-		}
-
-		mark {
-			background-color: rgb(255, 255, 0);
-			color: rgb(0, 0, 0);
-			background-position: initial initial;
-			background-repeat: initial initial;
-		}
-
-		.md-html-inline .md-plain,
-		.md-html-inline strong,
-		mark .md-inline-math,
-		mark strong {
-			color: inherit;
-		}
-
-		mark .md-meta {
-			color: rgb(0, 0, 0);
-			opacity: 0.3 !important;
-		}
-
-		@media print {
-
-			.typora-export h1,
-			.typora-export h2,
-			.typora-export h3,
-			.typora-export h4,
-			.typora-export h5,
-			.typora-export h6 {
-				break-inside: avoid;
-			}
-		}
-
-
-		@include-when-export url(https://fonts.loli.net/css?family=Didact+Gothic&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext);
-
-		/* cyrillic-ext */
-		/* cyrillic */
-		:root {
-			--window-border: none;
-			--typora-center-window-title: true;
-			--active-file-bg-color: #f3f3f3;
-			--bg-color: #fcfcfc;
-			--control-text-color: #777;
-		}
-
-		.mac-seamless-mode #typora-sidebar {
-			top: 20px;
-			padding-top: 0;
-			height: auto;
-		}
-
-		html,
-		body,
-		#write {
-			background: #fcfcfc;
-			background: var(--bg-color);
-			font-family: 'TeXGyreAdventor', "Century Gothic", "Didact Gothic", "Yu Gothic", sans-serif;
-			font-weight: 300;
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: #111;
-			font-family: 'TeXGyreAdventor', "Century Gothic", "Didact Gothic", "Yu Gothic", sans-serif;
-		}
-
-		html {
-			font-size: 16px;
-		}
-
-		#write {
-			max-width: 914px;
-			text-align: justify;
-		}
-
-		@media only screen and (min-width: 1400px) {
-			#write {
-				max-width: 1024px;
-			}
-		}
-
-		#write>h1:first-child {
-			margin-top: 2.75rem;
-		}
-
-		#write>h2:first-child {
-			margin-top: 1.75rem;
-		}
-
-		#write>h3:first-child {
-			margin-top: 1rem;
-		}
-
-		#write>h4:first-child {
-			margin-top: 0.5rem;
-		}
-
-		h1 {
-			font-weight: normal;
-			line-height: 4rem;
-			margin: 0 0 1.75rem;
-			padding: 20px 30px;
-			text-align: center;
-			text-transform: uppercase;
-			margin-top: 4rem;
-		}
-
-		h2 {
-			font-weight: normal;
-			line-height: 3rem;
-			margin: 0 0 1.9375rem;
-			padding: 0 30px;
-			text-align: center;
-			text-transform: uppercase;
-			margin-top: 3rem
-		}
-
-		h3 {
-			font-weight: normal;
-		}
-
-		h4 {
-			font-weight: normal;
-		}
-
-		h5 {
-			font-size: 1.125rem;
-			font-weight: normal;
-		}
-
-		h6 {
-			font-size: 1rem;
-			font-weight: bold;
-		}
-
-		p {
-			color: #111;
-			font-size: 1rem;
-			line-height: 1.75rem;
-			margin: 0 0 1.25rem;
-		}
-
-		#write>h3.md-focus:before {
-			left: -1.875rem;
-			top: 0.5rem;
-			padding: 2px;
-		}
-
-		#write>h4.md-focus:before {
-			left: -1.875rem;
-			top: 0.3125rem;
-			padding: 2px;
-		}
-
-		#write>h5.md-focus:before {
-			left: -1.875rem;
-			top: 0.25rem;
-			padding: 2px;
-		}
-
-		#write>h6.md-focus:before {
-			left: -1.875rem;
-			top: .125rem;
-			padding: 2px;
-		}
-
-		@media screen and (max-width: 48em) {
-			blockquote {
-				margin-left: 1rem;
-				margin-right: 0;
-				padding: 0.5em;
-			}
-
-			.h1,
-			h1 {
-				font-size: 2.827rem;
-			}
-
-			.h2,
-			h2 {
-				font-size: 1.999rem;
-			}
-
-			.h3,
-			h3 {
-				font-size: 1.413rem;
-			}
-
-			.h4,
-			h4 {
-				font-size: 1.250rem;
-			}
-
-			.h5,
-			h5 {
-				font-size: 1.150rem;
-			}
-
-			.h6,
-			h6 {
-				font-size: 1rem;
-			}
-		}
-
-		a,
-		.md-def-url {
-			color: #990000;
-			text-decoration: none;
-		}
-
-		a:hover {
-			text-decoration: underline;
-		}
-
-		table {
-			margin-bottom: 20px
-		}
-
-		table th,
-		table td {
-			padding: 8px;
-			line-height: 1.25rem;
-			vertical-align: top;
-			border-top: 1px solid #ddd
-		}
-
-		table th {
-			font-weight: bold
-		}
-
-		table thead th {
-			vertical-align: bottom
-		}
-
-		table caption+thead tr:first-child th,
-		table caption+thead tr:first-child td,
-		table colgroup+thead tr:first-child th,
-		table colgroup+thead tr:first-child td,
-		table thead:first-child tr:first-child th,
-		table thead:first-child tr:first-child td {
-			border-top: 0
-		}
-
-		table tbody+tbody {
-			border-top: 2px solid #ddd
-		}
-
-		code,
-		.md-fences {
-			padding: .5em;
-			/*background: #f0f0f0;*/
-			border: 1px solid #ccc;
-			padding: .1em;
-			font-size: 0.9em;
-			margin-left: 0.2em;
-			margin-right: 0.2em;
-		}
-
-		.md-fences {
-			margin: 0 0 20px;
-			font-size: 1em;
-			padding: 0.3em 1em;
-			padding-top: 0.4em;
-		}
-
-		.task-list {
-			padding-left: 0;
-		}
-
-		.task-list-item {
-			padding-left: 2.125rem;
-		}
-
-		input {
-			border-style: ridge;
-		}
-
-		.task-list-item input {
-			top: 3px;
-		}
-
-		.md-task-list-item input {
-			margin-left: -1.5em;
-		}
-
-		.task-list-item input:before {
-			content: "";
-			display: inline-block;
-			width: 1rem;
-			height: 1rem;
-			vertical-align: middle;
-			text-align: center;
-			border: 1px solid gray;
-			background-color: #fdfdfd;
-			margin-left: 0;
-			-webkit-appearance: none;
-			margin-top: -1rem;
-		}
-
-		.typora-node .task-list-item input:before {
-			top: 0.3ex;
-			position: absolute;
-		}
-
-		.task-list-item input:checked:before,
-		.task-list-item input[checked]:before {
-			content: '\25FC';
-			/*◘*/
-			font-size: 0.8125rem;
-			line-height: 0.9375rem;
-		}
-
-		/* Chrome 29+ */
-		@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-			.task-list-item input:before {
-				margin-top: -0.2rem;
-			}
-
-			.task-list-item input:checked:before,
-			.task-list-item input[checked]:before {
-				margin-top: -0.2rem;
-			}
-		}
-
-		blockquote {
-			margin: 0 0 1.11111rem;
-			padding: 0.5rem 1.11111rem 0 1.05556rem;
-			border-left: 1px solid gray;
-		}
-
-		blockquote,
-		blockquote p {
-			line-height: 1.6;
-			color: #6f6f6f;
-		}
-
-		#write pre.md-meta-block {
-			min-height: 30px;
-			background: #f8f8f8;
-			padding: 1.5em;
-			font-weight: 300;
-			font-size: 1em;
-			padding-bottom: 1.5em;
-			padding-top: 3em;
-			margin-top: -1.5em;
-			color: #999;
-
-			width: 100vw;
-			max-width: calc(100% + 60px);
-			margin-left: -30px;
-			border-left: 30px #f8f8f8 solid;
-			border-right: 30px #f8f8f8 solid;
-		}
-
-		.MathJax_Display {
-			font-size: 0.9em;
-			margin-top: 0.5em;
-			margin-bottom: 0;
-		}
-
-		p.mathjax-block,
-		.mathjax-block {
-			padding-bottom: 0;
-		}
-
-		.mathjax-block>.code-tooltip {
-			bottom: 5px;
-			box-shadow: none;
-		}
-
-		.md-image>.md-meta {
-			padding-left: 0.5em;
-			padding-right: 0.5em;
-		}
-
-		.md-image>img {
-			margin-top: 2px;
-		}
-
-		.md-image>.md-meta:first-of-type:before {
-			padding-left: 4px;
-		}
-
-		#typora-source {
-			color: #555;
-		}
-
-		/** ui for windows **/
-		#md-searchpanel {
-			border-bottom: 1px solid #ccc;
-		}
-
-		#md-searchpanel .btn {
-			border: 1px solid #ccc;
-		}
-
-		#md-notification:before {
-			top: 14px;
-		}
-
-		#md-notification {
-			background: #eee;
-		}
-
-		.megamenu-menu-panel .btn {
-			border: 1px solid #ccc;
-		}
-
-		#typora-sidebar {
-			box-shadow: none;
-		}
-
-		.file-list-item,
-		.show-folder-name .file-list-item {
-			padding-top: 20px;
-			padding-bottom: 20px;
-			line-height: 20px;
-		}
-
-		.file-list-item-summary {
-			height: 40px;
-			line-height: 20px;
-		}
-
-		.ty-table-edit {
-			background: #ededed;
-		}
-
-		.dropdown-menu .divider {
-			border-color: #e5e5e5;
-		}
-
-		.typora-export li,
-		.typora-export p,
-		.typora-export,
-		.footnote-line {
-			white-space: normal;
-		}
-	</style>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Run Peng&#39;s homepage</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+  .typora-export h1::after, .typora-export h2::after, .typora-export h3::after, .typora-export h4::after, .typora-export h5::after, .typora-export h6::after { content: ""; display: block; height: 100px; margin-bottom: -100px; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        border-top: 1px solid #eee;
+        margin-top: .3em;
+    }
+}
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
 </head>
-
-<body class='typora-export'>
-	<div id='write' class=''>
-		<h1 fontsize="30pt">
-			<center><strong>Run Peng</strong></center>
-		</h1>
-		<center>(+86) 13661635787 丨roihn@umich.edu</center>
-		<h1><a name="education" class="md-header-anchor"></a><span>Education</span></h1>
-		<h4><a name="university-of-michigan-ann-arbor" class="md-header-anchor"></a><strong><span>University of
-					Michigan, Ann Arbor</span></strong></h4>
-		<p><span>Computer Science and Engineering Bachelor, College of Engineering </span><em><span>Nov 2020 -
-					Present</span></em></p>
-		<ul>
-			<li><strong><span>GPA: 4.00 /4.00</span></strong></li>
-			<li><span>Coursework: Computer Vision (Win2021), Machine Learning (Win 2021), Numerical Method (Win2021),
-					Data Structures and Algorithms, Intro to Computer Organization.</span></li>
-		</ul>
-		<p>&nbsp;</p>
-		<h4><a name="shanghai-jiao-tong-university-sjtu" class="md-header-anchor"></a><strong><span>Shanghai Jiao Tong
-					University (SJTU)</span></strong></h4>
-		<p><span>Electrical and Computer Engineering B.S, UM-SJTU Joint Institute Shanghai, China </span><em><span>Aug
-					2019 - Sep 2020</span></em></p>
-		<ul>
-			<li><span>Main courses: Probabilistics Methods in Eng., Discrete mathematics</span></li>
-			<li><span>Honors/Awards: Scholarship for Academic Excellence,First Prize of Freshmen Robotics Competition,
-					Second Prize of Lanqiao Programming Contest, Honorable Mention in Mathematical Contest in
-					Modeling</span></li>
-		</ul>
-		<p>&nbsp;</p>
-		<hr />
-		<h1><a name="research--project-experience" class="md-header-anchor"></a><span>RESEARCH &amp; PROJECT
-				EXPERIENCE</span></h1>
-		<h4><a name="sjtu-thinklabhttpthinklabsjtueducn" class="md-header-anchor"></a><strong><span>SJTU-</span><a
-					href='http://thinklab.sjtu.edu.cn/'><span>ThinkLab</span></a></strong></h4>
-		<p><span>Member </span><em><span>Nov 2020 - Present</span></em></p>
-		<ul>
-			<li><span>Learning </span><strong><span>Multi-agent Reinforcement Learning</span></strong> on cooperation
-				between multiple planes to adjust their flying states and battle strategies</li>
-			<li><span>Applied DPPO on training troops to get higher score in a war game by macro strategies; designed 71
-					actions and states with 740 dimensions to clearly classify each task.</span></li>
-		</ul>
-		<h4><a name="experimental-evaluation-of-deep-reinforcement-learning-algorithms"
-				class="md-header-anchor"></a><strong><span>Experimental Evaluation of Deep Reinforcement Learning
-					Algorithms</span></strong><span> </span></h4>
-		<p><span>Adaptive Autonomous Agent Lab Researcher </span><em><span>Aug 2019 - Sep 2020</span></em><span> </span>
-		</p>
-		<ul>
-			<li><span>Tested the </span><strong><span>efficiency</span></strong><span> of searching
-				</span><strong><span>optimized hyperparameters</span></strong><span> of Augmented Random Search (ARS)
-					algorithm based on Roboschool environment.</span></li>
-			<li><span>Evaluated </span><strong><span>hyperparameter optimization</span></strong><span> techniques in
-					deep Reinforcement Learning (among grid, random and Bayesian search).</span></li>
-			<li><span>Tested the codes on three different systems of server: </span><strong><span>SLURM, PBS, and
-						OAR</span></strong><span>; Skilled in remote environment setting and online code testing.</span>
-			</li>
-		</ul>
-		<h4><a name="application-of-drone-delivery-in-logistics-of-medicine"
-				class="md-header-anchor"></a><strong><span>Application of Drone Delivery in Logistics of
-					Medicine</span></strong></h4>
-		<p><span> Leader of product design </span><em><span>Feb 2020 - Present</span></em><span> </span></p>
-		<ul>
-			<li><span>Designed algorithms for order assignment; used Floyd algorithm to calculate the shortest path;
-					took quantity, quality and distance as factors to get each weight to design optimized path for
-					delivering.</span></li>
-			<li><span>Used Nginx to perform load balancing for orders from the central system to individual base
-					stations and drones.</span></li>
-		</ul>
-		<p>&nbsp;</p>
-		<hr />
-		<h1><a name="internship-experience" class="md-header-anchor"></a><strong><span>INTERNSHIP
-					EXPERIENCE</span></strong></h1>
-		<h4><a name="intsighttpsenintsigcom-key-app-products-camscanner-camcard" class="md-header-anchor"></a><strong><a
-					href='https://en.intsig.com'><span>INTSIG</span></a><span> (Key App products: CamScanner,
-					CamCard)</span></strong><span> </span></h4>
-		<p><span>Algorithm Engineer AIM Shanghai </span><em><span>Aug 2020 - Jan 2021</span></em></p>
-		<ul>
-			<li><span>Applied </span><strong><span>Kubernetes &amp; K3S</span></strong><span> to Cloud deployment
-					construction; Designed automatic, minimized installation method for small companies without scaled
-					web clusters or related engineers.</span></li>
-			<li><span>Constuct </span><strong><span>Lua SDK</span></strong><span> of
-				</span><strong><span>mockserver</span></strong><span> for web testing to raise efficiency of
-					coordination between front and back-end teams</span></li>
-			<li><span>Construct </span><strong><span>Lua SDK</span></strong><span> of </span><strong><span>SQL (mysql,
-						postgres)</span></strong><span> code format correction for preventing SQL
-				</span><strong><span>injection</span></strong><span> and increasing the code simplicity.</span></li>
-		</ul>
-		<p>&nbsp;</p>
-		<hr />
-		<h1><a name="leadership" class="md-header-anchor"></a><span>Leadership</span></h1>
-		<h4><a name="student-science-and-technology-innovation-association-sstiahttpswwwjisjtueducncampus-lifestudent-organizationsji-student-science-technology-and-innovation-association"
-				class="md-header-anchor"></a><strong><span>Student Science and Technology Innovation Association
-					(</span><a
-					href='https://www.ji.sjtu.edu.cn/campus-life/student-organizations/ji-student-science-technology-and-innovation-association/'><span>SSTIA</span></a><span>)</span></strong><span>
-			</span></h4>
-		<p><span>Vice president </span><em><span>Sep 2018 - Oct 2020</span></em></p>
-		<ul>
-			<li><span>Organized 6-month competition sponsored by </span><em><span>Midea</span></em><span> and UMJI; both
-					online and offline events for 123 participants in Shanghai.</span></li>
-			<li><span>Acted as liaison with </span><em><span>Midea</span></em><span> staff, outsource company, and
-					volunteers to discuss and design the whole process of the competition (Preliminary, Semi-final and
-					Final)</span></li>
-			<li><span>Held events like Mechanical Innovation Competition and workshops on machine learning, web crawler,
-					genetic algorithm, the use of Solidworks, etc.</span></li>
-		</ul>
-		<p>&nbsp;</p>
-		<h1><a name="skills-certifications--others" class="md-header-anchor"></a><span>SKILLS, CERTIFICATIONS &amp;
-				OTHERS</span></h1>
-		<p><strong><span>Languages:</span></strong><span> English (Fluent, TOEFL:105, IELTS:7.5), Japanese (Native,
-				JLPT-N1)</span></p>
-		<p><strong><span>Computer:</span></strong><span> C/C++, Python, Lua, Javascript, Shell, MATLAB, Pascal,
-				Mathematica, Docker</span></p>
-		<p>&nbsp;</p>
-	</div>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1 fontsize="30pt"><center><strong>Run Peng</strong></center></h1><center>(+86) 13661635787 丨roihn@umich.edu</center><h1><a name="education" class="md-header-anchor"></a><span>Education</span></h1><h4><a name="university-of-michigan-ann-arbor" class="md-header-anchor"></a><strong><span>University of Michigan, Ann Arbor</span></strong></h4><p><span>Computer Science and Engineering Bachelor, College of Engineering  </span><em><span>Nov 2020 - Present</span></em></p><ul><li><strong><span>GPA: 4.00 /4.00</span></strong></li><li><span>Coursework: Computer Vision (Win2021), Machine Learning (Win 2021), Numerical Method (Win2021), Data Structures and Algorithms, Intro to Computer Organization.</span></li></ul><p>&nbsp;</p><h4><a name="shanghai-jiao-tong-university-sjtu" class="md-header-anchor"></a><strong><span>Shanghai Jiao Tong University (SJTU)</span></strong></h4><p><span>Electrical and Computer Engineering B.S, UM-SJTU Joint Institute Shanghai, China  </span><em><span>Aug 2019 - Sep 2020</span></em></p><ul><li><span>Main courses: Probabilistics Methods in Eng., Discrete mathematics</span></li><li><span>Honors/Awards: Scholarship for Academic Excellence,First Prize of Freshmen Robotics Competition, Second Prize of Lanqiao Programming Contest, Honorable Mention in Mathematical Contest in Modeling</span></li></ul><hr /><p>&nbsp;</p><p>&nbsp;</p><h1><a name="research--project-experience" class="md-header-anchor"></a><span>RESEARCH &amp; PROJECT EXPERIENCE</span></h1><h4><a name="sjtu-thinklabhttpthinklabsjtueducn" class="md-header-anchor"></a><strong><span>SJTU-</span><a href='http://thinklab.sjtu.edu.cn/'><span>ThinkLab</span></a></strong></h4><p><span>Member </span><em><span>Nov 2020 - Feb 2020</span></em></p><ul><li><span>Researching topics related to </span><strong><span>Multi-agent Reinforcement Learning</span></strong><span> (Mainly used: </span><code>raylib</code><span>, </span><code>pytorch</code><span>).</span></li><li><span>Applied for a patent about applying CNN-based MARL algorithms on optimizing cooperation between drones for scouting unexplored areas.</span></li></ul><h4><a name="service-migration-strategy-on-edge-cloud-computing" class="md-header-anchor"></a><strong><span>Service Migration Strategy on Edge Cloud Computing</span></strong></h4><p><span>Member </span><em><span>with Xudong Wang, professor, UM-SJTU Joint institute, Jan 2020 - Present</span></em></p><ul><li><span>Applying machine learning algorithm to determine the edge server for the backend to migrate based on the current B5G network status and computational resources, so as to guarantee QoS of applications</span></li></ul><h4><a name="experimental-evaluation-of-deep-reinforcement-learning-algorithms" class="md-header-anchor"></a><strong><span>Experimental Evaluation of Deep Reinforcement Learning Algorithms</span></strong><span> </span></h4><p><span>Adaptive Autonomous Agent Lab Researcher  </span><em><span>Aug 2019 - Sep 2020</span></em><span> </span></p><ul><li><span>Tested the </span><strong><span>efficiency</span></strong><span> of searching </span><strong><span>optimized hyperparameters</span></strong><span> of Augmented Random Search (ARS) algorithm based on Roboschool environment.</span></li><li><span>Evaluated </span><strong><span>hyperparameter optimization</span></strong><span> techniques in deep Reinforcement Learning (among grid, random and Bayesian search).</span></li><li><span>Tested the codes on three different systems of server: </span><strong><span>SLURM, PBS, and OAR</span></strong><span>; Skilled in remote environment setting and online code testing.</span></li></ul><h4><a name="application-of-drone-delivery-in-logistics-of-medicine" class="md-header-anchor"></a><strong><span>Application of Drone Delivery in Logistics of Medicine</span></strong></h4><p><span> Leader of product design  </span><em><span>Feb 2020 - Present</span></em><span> </span></p><ul><li><span>Designed algorithms for order assignment; used Floyd algorithm to calculate the shortest path; took quantity, quality and distance as factors to get each weight to design optimized path for delivering.</span></li><li><span>Used Nginx to perform load balancing for orders from the central system to individual base stations and drones.</span></li></ul><hr /><p>&nbsp;</p><p>&nbsp;</p><h1><a name="internship-experience" class="md-header-anchor"></a><strong><span>INTERNSHIP EXPERIENCE</span></strong></h1><h4><a name="intsighttpsenintsigcom-key-app-products-camscanner-camcard" class="md-header-anchor"></a><strong><a href='https://en.intsig.com'><span>INTSIG</span></a><span> (Key App products: CamScanner, CamCard)</span></strong><span> </span></h4><p><span>Algorithm Engineer AIM Shanghai  </span><em><span>Aug 2020 - Jan 2021</span></em></p><p><em><span>&quot;Run Peng is the most skilled intern student on self-learning and code designing I have ever seen! He can always clearly understand my meaning by only a few words which impressed me a lot.&quot;  By Celebi L., Mentor.</span></em></p><ul><li><span>Applied </span><strong><span>Kubernetes &amp; K3S</span></strong><span> to Cloud deployment construction; Designed automatic, minimized installation method for small companies without scaled web clusters or related engineers.</span></li><li><span>Construct </span><strong><span>Lua SDK</span></strong><span> of </span><strong><span>mock server</span></strong><span> for web testing to raise efficiency of coordination between front and back-end teams</span></li><li><span>Construct </span><strong><span>Lua SDK</span></strong><span> of </span><strong><span>SQL (mysql, postgres)</span></strong><span> code format correction for preventing SQL injection and increasing the code simplicity.</span></li></ul><p>&nbsp;</p><hr /><p>&nbsp;</p><p>&nbsp;</p><h1><a name="leadership" class="md-header-anchor"></a><span>Leadership</span></h1><h4><a name="student-science-and-technology-innovation-association-sstiahttpswwwjisjtueducncampus-lifestudent-organizationsji-student-science-technology-and-innovation-association" class="md-header-anchor"></a><strong><span>Student Science and Technology Innovation Association (</span><a href='https://www.ji.sjtu.edu.cn/campus-life/student-organizations/ji-student-science-technology-and-innovation-association/'><span>SSTIA</span></a><span>)</span></strong><span> </span></h4><p><span>Vice president  </span><em><span>Sep 2018 - Oct 2020</span></em></p><ul><li><span>Organized 6-month </span><a href='https://www.ji.sjtu.edu.cn/cn/off-the-press-zh/2020-10-29/115129/'><span>competition</span></a><span> sponsored by </span><em><span>Midea</span></em><span> and UMJI; both online and offline events for 123 participants in Shanghai.</span></li><li><span>Acted as liaison with </span><em><span>Midea</span></em><span> staff, outsource company, and volunteers to discuss and design the whole process of the competition (Preliminary, Semi-final and Final)</span></li><li><span>Held events like Mechanical Innovation Competition and workshops on machine learning, web crawler, genetic algorithm, the use of Solidworks, etc.</span></li></ul><hr /><p>&nbsp;</p><p>&nbsp;</p><h1><a name="skills-certifications--others" class="md-header-anchor"></a><span>SKILLS, CERTIFICATIONS &amp; OTHERS</span></h1><p><strong><span>Languages:</span></strong><span> English (Fluent, TOEFL:105, IELTS:7.5), Japanese (Native, JLPT-N1)</span></p><p><strong><span>Computer:</span></strong><span> C/C++, Python, Lua, Javascript, Shell, SQL, MATLAB, Pascal, Mathematica, Docker</span></p><p>&nbsp;</p></div>
 </body>
-
 </html>
